@@ -1,0 +1,14 @@
+---
+description: Spring Service、Component、Controller 与构造器注入规范
+alwaysApply: false
+globs: **/*Service.java,**/*ServiceImpl.java,**/*Controller.java,**/*Component.java
+---
+
+# Spring 服务与依赖注入规范
+
+- Spring 托管类默认只保留一个生产构造器。
+- 新增依赖时更新唯一生产构造器。
+- 测试侧优先使用测试工厂、Mockito 注入或 mock 依赖。
+- 可选依赖必须使用 `ObjectProvider`、可选 setter 或清晰空值防护表达。
+- 不得通过多个构造器传入 `null` 隐藏依赖是否必需。
+- 事务注解只放在真实业务事务边界上。

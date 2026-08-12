@@ -1,0 +1,16 @@
+schema_version: 1
+release_id: R-{{DATE}}-{{NO}}
+status: ASSEMBLING
+baseline: {{稳定基线}}
+included_tasks: []
+excluded_tasks: []
+repositories:
+  - name: {{仓库名}}
+    commit: {{提交号}}
+    artifact: {{制品版本}}
+database_migrations: []
+feature_flags: []
+environment: qianjin-test
+verification_report: verification.md
+approved_by: null
+frozen_at: null

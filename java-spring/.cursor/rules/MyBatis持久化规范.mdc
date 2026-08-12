@@ -1,0 +1,13 @@
+---
+description: MyBatis Mapper、DO、XML 和 SQL 变更规范
+alwaysApply: false
+globs: **/*Mapper.java,**/*Mapper.xml,**/*DO.java
+---
+
+# MyBatis 持久化规范
+
+- Mapper 方法入参必须清晰表达查询条件。
+- 新增查询字段必须确认 SQL、DO 和结果映射同时更新。
+- 新增表字段必须评估默认值、历史数据兼容性和索引影响。
+- 分页查询不得在内存中截断大结果集。
+- 动态 SQL 分支必须处理空集合和空字符串。

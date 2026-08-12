@@ -1,0 +1,14 @@
+schema_version: 1
+task_id: TASK-{{ID}}
+conflict_level: GREEN
+write_set:
+  repositories: []
+  modules: []
+  classes: []
+  contracts: []
+  tables: []
+  migrations: []
+related_tasks: []
+decision: PARALLEL
+reason: {{原因}}
+checked_at: {{ISO-8601时间}}

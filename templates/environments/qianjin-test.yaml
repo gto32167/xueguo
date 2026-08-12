@@ -1,0 +1,11 @@
+schema_version: 1
+environment: qianjin-test
+status: AVAILABLE
+release_id: null
+vpn_required: true
+deployed_repositories: []
+verification_owner: null
+lease_started_at: null
+lease_expires_at: null
+last_health_check: null
+note: 本文件只记录环境状态，不记录密码、完整连接串或 VPN 凭据。

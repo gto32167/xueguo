@@ -1,0 +1,14 @@
+---
+description: HiStore 多仓领域落点规范
+alwaysApply: true
+---
+
+# 多仓领域落点规范
+
+- `HiStore-gw` 负责 BFF、聚合接口、多端适配和 Apifox 文档。
+- `HiStore-base` 负责平台基础配置、用户、权限、店铺基础能力。
+- `HiStore-trade` 负责商品、营销、购物车、预下单和交易前链路。
+- `HiStore-order` 负责订单、支付、售后、履约、评论和状态流转。
+- `HiStore-report` 负责统计报表、经营分析和导出。
+- `HiStore-starter` 负责父 POM、公共 starter 和基础设施组件。
+- 业务真相不得为了接口方便沉淀到 `HiStore-gw`。

@@ -1,0 +1,15 @@
+---
+description: HiStore-gw 聚合接口与 Apifox 文档规范
+alwaysApply: false
+globs: **/HiStore-gw/**/*.java,**/docs/apifox/*.json
+---
+
+# 网关聚合与 Apifox 规范
+
+- `HiStore-gw` 只做端侧接口适配、鉴权、聚合和文档，不沉淀领域规则。
+- 新增外部接口字段必须同步 `docs/apifox/*.zh.openapi.json`。
+- mock 示例文件必须同步关键字段示例。
+- 子级字段必须有中文解释。
+- 稳定字段补充 `required`。
+- 状态或类型字段补充枚举说明。
+- 不影响外部接口契约时，交付说明必须写明无需更新 Apifox 的原因。

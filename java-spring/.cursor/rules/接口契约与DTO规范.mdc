@@ -1,0 +1,14 @@
+---
+description: Request、Response、DTO、Feign、Thrift 契约变更规范
+alwaysApply: false
+globs: **/*Request.java,**/*Response.java,**/*DTO.java,**/*VO.java,**/*Feign*.java,**/*Thrift*.java
+---
+
+# 接口契约与 DTO 规范
+
+- 新增字段优先放在 `*-api` 模块。
+- 字段名、类型、枚举值必须与上下游契约一致。
+- 新增字段必须写中文字段注释。
+- 共享枚举新增值必须检查所有 `switch`、`if` 分支和默认值处理。
+- Feign 和 Thrift 契约变化必须搜索消费者并记录影响。
+- 外部接口字段变化必须同步网关响应和 Apifox 文档。

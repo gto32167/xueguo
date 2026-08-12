@@ -1,0 +1,22 @@
+schema_version: 1
+task_id: TASK-{{ID}}
+title: {{任务标题}}
+requirement_id: REQ-{{ID}}
+requirement_version: v1
+status: DRAFT
+owner: {{负责人}}
+repositories:
+  - name: {{仓库名}}
+    branch: task/{{ID}}
+    base_commit: {{提交号}}
+    changed_modules: []
+must_read:
+  - {{中央任务卡}}
+  - {{需求基线}}
+  - {{相关代码入口}}
+conflict_level: GREEN
+dependencies: []
+verification_levels:
+  - L1
+next_action: {{下一步唯一动作}}
+updated_at: {{ISO-8601时间}}

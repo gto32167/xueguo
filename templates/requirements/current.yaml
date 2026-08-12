@@ -1,0 +1,12 @@
+schema_version: 1
+requirement_id: REQ-{{ID}}
+current_version: v1
+status: EFFECTIVE
+decision: ACCEPT
+owner: {{负责人}}
+approved_by: {{批准人}}
+approved_at: {{ISO-8601时间}}
+baseline_path: baselines/v1
+change_request: null
+task_set: baselines/v1/tasks.yaml
+updated_at: {{ISO-8601时间}}

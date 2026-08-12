@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "platform": "java-spring",
+  "kernelVersion": "0.1.0",
+  "bundleVersion": "0.1.0",
+  "updatedAt": "2026-07-22",
+  "skills": [
+    {
+      "name": "project-bootstrap",
+      "version": "0.1.0",
+      "category": "infra",
+      "status": "draft",
+      "description": "扫描 Java Spring 多模块后端项目约定，生成 project-conventions。",
+      "dependsOn": []
+    },
+    {
+      "name": "backend-feature-spec",
+      "version": "0.1.0",
+      "category": "workflow",
+      "status": "draft",
+      "description": "为后端需求生成 docs/features/<slug> 规格工件。",
+      "dependsOn": []
+    },
+    {
+      "name": "impact-analyze",
+      "version": "0.1.0",
+      "category": "workflow",
+      "status": "draft",
+      "description": "分析后端需求影响仓库、模块、接口和消费者。",
+      "dependsOn": [
+        "backend-feature-spec"
+      ]
+    },
+    {
+      "name": "contract-change",
+      "version": "0.1.0",
+      "category": "workflow",
+      "status": "draft",
+      "description": "设计 DTO、Feign、Thrift、GW、Apifox 字段链路。",
+      "dependsOn": [
+        "impact-analyze"
+      ]
+    },
+    {
+      "name": "domain-feature-dev",
+      "version": "0.1.0",
+      "category": "workflow",
+      "status": "draft",
+      "description": "按规格实现后端领域功能最小必要改动。",
+      "dependsOn": [
+        "contract-change"
+      ]
+    },
+    {
+      "name": "gw-contract-docgen",
+      "version": "0.1.0",
+      "category": "integration",
+      "status": "draft",
+      "description": "同步 HiStore-gw Apifox OpenAPI 和 mock 示例。",
+      "dependsOn": [
+        "contract-change"
+      ]
+    },
+    {
+      "name": "feature-verify",
+      "version": "0.1.0",
+      "category": "quality",
+      "status": "draft",
+      "description": "执行后端 L1 验收：字段链路、编译、测试和文档检查。",
+      "dependsOn": [
+        "domain-feature-dev"
+      ]
+    },
+    {
+      "name": "feature-finish",
+      "version": "0.1.0",
+      "category": "quality",
+      "status": "draft",
+      "description": "整理后端交付说明、验证结果和未联调风险。",
+      "dependsOn": [
+        "feature-verify"
+      ]
+    }
+  ]
+}

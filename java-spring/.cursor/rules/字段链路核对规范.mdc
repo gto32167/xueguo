@@ -1,0 +1,19 @@
+---
+description: 后端字段从数据源到外部响应的逐层核对规范
+alwaysApply: false
+globs: **/*.java
+---
+
+# 字段链路核对规范
+
+新增或修改返回字段时必须核对：
+
+1. 数据源字段是否存在。
+2. Mapper、DO 或外部响应对象是否读取字段。
+3. 领域对象或 BO 是否承载字段。
+4. Feign 或 Thrift 响应是否设置字段。
+5. 网关聚合响应是否设置字段。
+6. `JsonUtil.copy`、MapStruct、构造器、默认空对象和 fallback 是否遗漏字段。
+7. Apifox 文档是否包含中文解释、example、required 和枚举说明。
+
+交付说明必须写明字段链路核对到哪一层。

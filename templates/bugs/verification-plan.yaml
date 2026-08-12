@@ -1,0 +1,27 @@
+schema_version: 1
+bug_id: TAPD-{{ID}}
+title: {{BUG标题}}
+status: ANALYZING
+source_url: {{TAPD链接}}
+root_cause_layer: {{待分析}}
+affected_repositories: []
+reproduction:
+  steps: []
+  expected: {{期望}}
+  actual: {{实际}}
+regression_test:
+  path: {{测试路径}}
+  status: MISSING
+verification_levels:
+  - L1
+evidence:
+  local_commands: []
+  remote_requests: []
+  screenshots: []
+  unverified_risks: []
+vpn_gate:
+  required: false
+  status: NOT_REQUIRED
+  note: 人工连接 VPN 后继续真实环境验证。
+next_action: {{下一步唯一动作}}
+updated_at: {{ISO-8601时间}}
