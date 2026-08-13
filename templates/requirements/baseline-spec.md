@@ -30,4 +30,4 @@ source: {{来源}}
 - 受影响仓：
 - 关键模块：
 - 关键接口和数据：
-- GitNexus 索引提交：
+- codebase-memory-mcp 索引提交：
