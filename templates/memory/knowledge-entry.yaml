@@ -1,0 +1,22 @@
+schema_version: 1
+memory_id: MEM-{{ID}}
+project_id: {{项目ID}}
+type: {{DOMAIN_RULE | SERVICE_MAP | KNOWN_PITFALL | VALIDATION_RECIPE | TOOL_CANDIDATE}}
+status: CANDIDATE
+summary: {{可检索的一句话摘要}}
+content: |
+  {{只记录可复用的结论，不复制聊天全文、完整日志或大段代码。}}
+source_tasks:
+  - TASK-{{ID}}
+evidence:
+  - {{验证报告、测试、提交或人工决策索引}}
+applicable_scope:
+  repositories: []
+  modules: []
+  scenarios: []
+reuse_count: 0
+last_used_at: null
+verified_by: null
+verified_at: null
+deprecated_reason: null
+updated_at: {{ISO-8601时间}}

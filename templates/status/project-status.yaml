@@ -1,0 +1,14 @@
+schema_version: 1
+project_id: {{项目ID}}
+updated_at: {{ISO-8601时间}}
+active_tasks: []
+pending_decisions:
+  - decision_id: DEC-{{ID}}
+    task_id: TASK-{{ID}}
+    owner: {{人工决策人}}
+    reason: {{目标不清、业务语义未知或高风险事项}}
+    status: OPEN
+current_risks: []
+conflicts: []
+frozen_releases: []
+next_review_at: null

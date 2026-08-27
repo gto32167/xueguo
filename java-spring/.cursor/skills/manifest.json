@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "platform": "java-spring",
-  "kernelVersion": "0.1.0",
-  "bundleVersion": "0.1.0",
-  "updatedAt": "2026-07-22",
+  "kernelVersion": "1.1.0",
+  "bundleVersion": "1.1.0",
+  "updatedAt": "2026-08-13",
   "skills": [
     {
       "name": "project-bootstrap",
@@ -79,6 +79,16 @@
       "description": "整理后端交付说明、验证结果和未联调风险。",
       "dependsOn": [
         "feature-verify"
+      ]
+    },
+    {
+      "name": "workflow-learn",
+      "version": "0.1.0",
+      "category": "workflow",
+      "status": "draft",
+      "description": "从已验证任务中沉淀项目记忆、验证配方和工具候选。",
+      "dependsOn": [
+        "feature-finish"
       ]
     }
   ]

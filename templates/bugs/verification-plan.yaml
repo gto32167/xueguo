@@ -3,6 +3,14 @@ bug_id: TAPD-{{ID}}
 title: {{BUG标题}}
 status: ANALYZING
 source_url: {{TAPD链接}}
+owner: {{最终责任人，必须为人}}
+execution:
+  executor: {{SYSTEM | AI | HUMAN}}
+  uncertainty: {{LOW | MEDIUM | HIGH}}
+  human_gate:
+    required: false
+    owner: null
+    reason: null
 root_cause_layer: {{待分析}}
 affected_repositories: []
 reproduction:
@@ -19,6 +27,8 @@ evidence:
   remote_requests: []
   screenshots: []
   unverified_risks: []
+validation_recipe: null
+memory_candidates: []
 vpn_gate:
   required: false
   status: NOT_REQUIRED

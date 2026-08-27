@@ -11,6 +11,10 @@ $required = @(
     "templates\bugs\verification-plan.yaml",
     "templates\releases\manifest.yaml",
     "templates\coordination\conflict.yaml",
+    "templates\memory\knowledge-entry.yaml",
+    "templates\memory\validation-recipe.md",
+    "templates\retrospectives\task-retrospective.md",
+    "templates\status\project-status.yaml",
     "tools\install.ps1",
     "tools\upgrade.ps1"
 )
@@ -26,6 +30,6 @@ foreach ($file in $textFiles) {
     if ($content.Contains([char]0xfffd)) { $errors += "Found replacement character: $($file.FullName)" }
 }
 $version = (Get-Content -LiteralPath (Join-Path $root 'VERSION') -Raw -Encoding UTF8).Trim()
-if ($version -ne '1.0.0') { $errors += "VERSION must be 1.0.0, actual: $version" }
+if ($version -ne '1.1.0') { $errors += "VERSION must be 1.1.0, actual: $version" }
 if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
-Write-Output "PASS: Xueguo Framework 1.0.0"
+Write-Output "PASS: Xueguo Framework 1.1.0"

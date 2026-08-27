@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.0 - 2026-08-13
+
+- 增加 SYSTEM/AI/HUMAN 执行路由、不确定性字段和人工责任门禁。
+- 增加项目记忆、验证配方、任务复盘和团队状态模板。
+- 新增 `workflow-learn` Skill，支持候选知识验证、过时淘汰和重复推理工具化。
+- 将项目记忆读取、验证配方和复盘沉淀接入 Java Spring 黄金路径。
+- 安装新项目时自动创建 `memory`、`retrospectives` 和 `status` 目录；升级仍不覆盖项目空间。
+
 ## 1.0.0 - 2026-08-12
 
 - 建立独立的 Xueguo Agent Framework 仓库结构。

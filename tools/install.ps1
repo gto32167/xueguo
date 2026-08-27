@@ -58,7 +58,7 @@ workspace:
     Set-Content -LiteralPath $configPath -Value $config.TrimStart() -Encoding UTF8
 }
 
-foreach ($directory in @("tasks", "requirements", "releases", "coordination", "environments")) {
+foreach ($directory in @("tasks", "requirements", "releases", "coordination", "environments", "memory", "retrospectives", "status")) {
     Ensure-Directory (Join-Path $projectDir $directory)
 }
 Set-Content -LiteralPath (Join-Path $agentDir "managed-files.txt") -Value @(".cursor/rules", ".cursor/skills") -Encoding UTF8

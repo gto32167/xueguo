@@ -10,3 +10,6 @@
 | `releases/` | 选择性发布清单 |
 | `coordination/` | 并行任务冲突登记 |
 | `environments/` | 测试环境租约和部署版本 |
+| `memory/` | 项目记忆、验证配方和工具候选 |
+| `retrospectives/` | 任务完成后的复盘与自演进建议 |
+| `status/` | 团队共同上下文、风险和待人工决策 |

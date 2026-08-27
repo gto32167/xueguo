@@ -1,10 +1,19 @@
-schema_version: 1
+schema_version: 2
 task_id: TASK-{{ID}}
 title: {{任务标题}}
 requirement_id: REQ-{{ID}}
 requirement_version: v1
 status: DRAFT
-owner: {{负责人}}
+owner: {{最终责任人，必须为人}}
+execution:
+  executor: {{SYSTEM | AI | HUMAN}}
+  uncertainty: {{LOW | MEDIUM | HIGH}}
+  reason: {{为什么由该主体执行}}
+  system_automation: []
+  human_gate:
+    required: false
+    owner: null
+    reason: null
 repositories:
   - name: {{仓库名}}
     branch: task/{{ID}}
@@ -18,5 +27,7 @@ conflict_level: GREEN
 dependencies: []
 verification_levels:
   - L1
+memory_inputs: []
+retrospective_required: true
 next_action: {{下一步唯一动作}}
 updated_at: {{ISO-8601时间}}
