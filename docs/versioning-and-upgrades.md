@@ -13,14 +13,21 @@
 ```yaml
 framework:
   name: xueguo
-  version: 1.0.0
+  version: 1.2.0
 project:
   id: example-project
   name: 示例项目
 workspace:
   path: ../xueguo-projects
   memory_mode: central
+context_management:
+  enabled: true
+  rollover_threshold_tokens: 260000
+  strategy: checkpoint_then_new_session
+  checkpoint_directory: status/sessions
 ```
+
+`rollover_threshold_tokens` 使用十进制 token 数。项目可以覆盖默认值；升级工具只提示旧项目缺失该配置，不自动改写项目拥有的 `config.yaml`。
 
 ## 文件所有权
 

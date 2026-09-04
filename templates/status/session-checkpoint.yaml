@@ -1,0 +1,24 @@
+schema_version: 1
+checkpoint_id: SESSION-{{ID}}
+task_id: TASK-{{ID}}
+status: READY
+created_at: {{ISO-8601时间}}
+trigger:
+  context_tokens: {{当前上下文token数}}
+  threshold_tokens: 260000
+goal: {{当前最终目标}}
+latest_user_intent: {{用户最新要求}}
+constraints: []
+decisions: []
+completed: []
+pending:
+  - {{下一步唯一动作}}
+artifacts:
+  - path: {{文件或工件路径}}
+    state: {{已修改、未修改或待验证}}
+verification: []
+workspace_state:
+  repositories: []
+  uncommitted_changes: []
+risks: []
+resume_instruction: {{新会话首先执行的动作}}

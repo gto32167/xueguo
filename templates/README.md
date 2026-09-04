@@ -13,3 +13,4 @@
 | `memory/` | 项目记忆、验证配方和工具候选 |
 | `retrospectives/` | 任务完成后的复盘与自演进建议 |
 | `status/` | 团队共同上下文、风险和待人工决策 |
+| `status/session-checkpoint.yaml` | 会话轮转前的结构化任务检查点 |

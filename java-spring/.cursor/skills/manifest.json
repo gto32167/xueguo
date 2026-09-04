@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "platform": "java-spring",
-  "kernelVersion": "1.1.0",
-  "bundleVersion": "1.1.0",
-  "updatedAt": "2026-08-13",
+  "kernelVersion": "1.2.0",
+  "bundleVersion": "1.2.0",
+  "updatedAt": "2026-09-04",
   "skills": [
     {
       "name": "project-bootstrap",

@@ -37,7 +37,7 @@ foreach ($category in @(".cursor\rules", ".cursor\skills")) {
     $source = Join-Path $sourceRoot $category
     $destination = Join-Path $targetRoot $category
     Ensure-Directory $destination
-    Copy-Item -LiteralPath (Join-Path $source "*") -Destination $destination -Recurse -Force
+    Copy-Item -Path (Join-Path $source "*") -Destination $destination -Recurse -Force
 }
 
 $agentDir = Join-Path $targetRoot ".agent-workflow"
@@ -54,12 +54,22 @@ project:
 workspace:
   path: $projectSpaceRoot
   memory_mode: central
+context_management:
+  enabled: true
+  rollover_threshold_tokens: 260000
+  strategy: checkpoint_then_new_session
+  checkpoint_directory: status/sessions
 "@
     Set-Content -LiteralPath $configPath -Value $config.TrimStart() -Encoding UTF8
 }
 
 foreach ($directory in @("tasks", "requirements", "releases", "coordination", "environments", "memory", "retrospectives", "status")) {
     Ensure-Directory (Join-Path $projectDir $directory)
+}
+Ensure-Directory (Join-Path $projectDir "status\sessions")
+$sessionTemplateTarget = Join-Path $projectDir "status\sessions\_template.yaml"
+if (-not (Test-Path -LiteralPath $sessionTemplateTarget)) {
+    Copy-Item -LiteralPath (Join-Path $frameworkRoot "templates\status\session-checkpoint.yaml") -Destination $sessionTemplateTarget
 }
 Set-Content -LiteralPath (Join-Path $agentDir "managed-files.txt") -Value @(".cursor/rules", ".cursor/skills") -Encoding UTF8
 Write-Output "Framework installed: $targetRoot"

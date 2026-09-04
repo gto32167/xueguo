@@ -35,17 +35,22 @@ foreach ($category in @(".cursor\rules", ".cursor\skills")) {
 }
 
 $version = (Get-Content (Join-Path $frameworkRoot "VERSION") -Raw).Trim()
+$configContent = Get-Content -LiteralPath $configPath -Raw -Encoding UTF8
+$missingRolloverThreshold = -not ($configContent -match '(?m)^\s*rollover_threshold_tokens\s*:')
 Write-Output "Framework version: $version"
 Write-Output "New files: $($adds.Count)"
 Write-Output "Changed files: $($updates.Count)"
 $adds | ForEach-Object { Write-Output "ADD $_" }
 $updates | ForEach-Object { Write-Output "UPDATE $_" }
+if ($missingRolloverThreshold) {
+    Write-Warning "Project config has no rollover_threshold_tokens setting. Add context_management.rollover_threshold_tokens: 260000 manually; config.yaml is project-owned and will not be overwritten."
+}
 if ($Check -or $WhatIf) { exit 0 }
 
 foreach ($category in @(".cursor\rules", ".cursor\skills")) {
     $sourceDir = Join-Path $sourceRoot $category
     $targetDir = Join-Path $targetRoot $category
     if (-not (Test-Path -LiteralPath $targetDir)) { New-Item -ItemType Directory -Force -Path $targetDir | Out-Null }
-    Copy-Item -LiteralPath (Join-Path $sourceDir "*") -Destination $targetDir -Recurse -Force
+    Copy-Item -Path (Join-Path $sourceDir "*") -Destination $targetDir -Recurse -Force
 }
 Write-Output "Framework files upgraded. Project config and project space were preserved."
