@@ -1,6 +1,7 @@
 schema_version: 1
 bug_id: TAPD-{{ID}}
 title: {{BUG标题}}
+change_level: {{L0 | L1 | L2 | L3}}
 status: ANALYZING
 source_url: {{TAPD链接}}
 owner: {{最终责任人，必须为人}}
@@ -12,6 +13,8 @@ execution:
     owner: null
     reason: null
 root_cause_layer: {{待分析}}
+scope_summary: {{受影响仓库、模块和文件}}
+spec_refs: []
 affected_repositories: []
 reproduction:
   steps: []
@@ -20,8 +23,7 @@ reproduction:
 regression_test:
   path: {{测试路径}}
   status: MISSING
-verification_levels:
-  - L1
+verification_levels: []
 evidence:
   local_commands: []
   remote_requests: []

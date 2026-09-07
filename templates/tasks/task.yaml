@@ -1,8 +1,9 @@
 schema_version: 2
 task_id: TASK-{{ID}}
 title: {{任务标题}}
-requirement_id: REQ-{{ID}}
-requirement_version: v1
+change_level: {{L0 | L1 | L2 | L3}}
+requirement_id: {{REQ-{{ID}} | N/A（L0/L1轻量任务）}}
+requirement_version: {{v1 | N/A}}
 status: DRAFT
 owner: {{最终责任人，必须为人}}
 execution:
@@ -19,15 +20,18 @@ repositories:
     branch: task/{{ID}}
     base_commit: {{提交号}}
     changed_modules: []
+scope_summary: {{受影响仓库、模块和文件}}
 must_read:
-  - {{中央任务卡}}
-  - {{需求基线}}
+  - {{中央任务卡或轻量变更记录}}
+  - {{需求基线或 BUG 卡}}
   - {{相关代码入口}}
+spec_refs: []
+deliverable: {{可独立验收的交付物}}
+verification: {{验证命令或证据位置}}
 conflict_level: GREEN
 dependencies: []
-verification_levels:
-  - L1
+verification_levels: []
 memory_inputs: []
-retrospective_required: true
+retrospective_required: {{true（L2/L3） | false（L0/L1可在轻量记录中完成）}}
 next_action: {{下一步唯一动作}}
 updated_at: {{ISO-8601时间}}

@@ -6,11 +6,14 @@
 【bootstrap】->【spec】->【analyze】->【contract】->【implement】->【verify】->【finish】
 ```
 
+该路径用于 L2/L3 变更。L0/L1 先使用 `change-route` 选择轻量记录和最小验证，发现影响扩大后再升级到完整路径。
+
 ## 路由表
 
 | 用户意图 | Skill |
 |---|---|
 | bootstrap、扫描项目约定 | `project-bootstrap` |
+| 分级、小 BUG、轻量流程 | `change-route` |
 | spec、先写规格、propose | `backend-feature-spec` |
 | analyze、影响分析、落仓分析 | `impact-analyze` |
 | contract、字段、DTO、接口变更 | `contract-change` |

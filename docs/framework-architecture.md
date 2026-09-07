@@ -1,4 +1,4 @@
-# Xueguo Agent Framework 1.2 架构
+# Xueguo Agent Framework 1.3 架构
 
 ## 定位
 
@@ -16,7 +16,7 @@ Xueguo 是跨项目复用的 Agent 研发协作框架。框架仓只维护通用
 
 ## 核心能力
 
-| 能力 | 作用 | 1.1 形态 |
+| 能力 | 作用 | 1.3 形态 |
 |---|---|---|
 | 需求发现 | 识别问题、价值、替代方案和风险 | Markdown 模板 |
 | 需求基线 | 保留有效版本，避免静默覆盖 | `CURRENT.yaml` + baselines |
@@ -32,6 +32,7 @@ Xueguo 是跨项目复用的 Agent 研发协作框架。框架仓只维护通用
 | 复盘自演进 | 识别重复推理并推动工具化 | `workflow-learn` Skill |
 | 团队上下文 | 汇总任务、风险、待决策和冻结发布 | 项目空间 `status/` |
 | 会话预算 | 达到 token 阈值后以结构化检查点轮转会话 | 项目配置 + `status/sessions/` |
+| 变更风险路由 | 按风险选择 L0-L3 最小充分流程，避免小修复流程官僚化 | `change-risk-routing.md` + `change-route` Skill |
 
 ## 权威边界
 
@@ -40,7 +41,7 @@ Xueguo 是跨项目复用的 Agent 研发协作框架。框架仓只维护通用
 - 业务 Git 仓：Java 源码、测试代码和项目专属配置。
 - codebase-memory-mcp：代码结构和调用关系索引，不承担业务决策记忆。
 
-## 1.2 非目标
+## 1.3 非目标
 
 - 不自动修改业务代码。
 - 不自动合并分支或自动发布。

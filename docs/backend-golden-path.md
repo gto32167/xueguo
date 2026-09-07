@@ -10,6 +10,8 @@
 bootstrap -> spec -> analyze -> contract -> implement -> verify -> finish
 ```
 
+该路径适用于 L2/L3 契约变更。L0/L1 局部修复使用 `docs/change-risk-routing.md` 的轻量路径；一旦发现共享字段、消费者或接口影响，立即升级到本路径。
+
 ## 必查链路
 
 | 层级 | 检查内容 |
@@ -22,7 +24,7 @@ bootstrap -> spec -> analyze -> contract -> implement -> verify -> finish
 
 ## 验收口径
 
-L1 必做：字段链路检查、受影响模块编译、针对性测试或测试风险说明。
+验证层级 L1 必做：字段链路检查、受影响模块编译、针对性测试或测试风险说明。
 
 L2 按环境执行：curl 或接口工具验证测试环境 JSON 结构。
 

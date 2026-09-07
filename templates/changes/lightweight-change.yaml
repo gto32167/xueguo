@@ -1,0 +1,36 @@
+schema_version: 1
+change_id: CHG-{{ID}}
+title: {{变更标题}}
+change_type: BUG | MAINTENANCE
+change_level: L0 | L1
+owner: {{最终责任人，必须为人}}
+status: DRAFT
+scope_summary: {{受影响仓库、模块和文件}}
+scope:
+  repositories: []
+  modules: []
+  files: []
+reason: {{为什么修改}}
+signals:
+  external_contract: false
+  data_structure_or_meaning: false
+  cross_module_or_consumer: false
+  permission_money_or_state: false
+  new_dependency_or_deployment: false
+  irreversible_operation: false
+artifacts:
+  full_spec: NOT_REQUIRED
+  impact_analysis: NOT_REQUIRED
+  plan: NOT_REQUIRED
+  regression_test: {{测试路径或 N/A}}
+verification:
+  commands: []
+  result: PENDING
+  evidence: []
+  unverified_risks: []
+escalation:
+  required: false
+  target_level: null
+  reason: null
+spec_refs: []
+updated_at: {{ISO-8601时间}}

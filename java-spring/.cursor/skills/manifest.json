@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "platform": "java-spring",
-  "kernelVersion": "1.2.0",
-  "bundleVersion": "1.2.0",
-  "updatedAt": "2026-09-04",
+  "kernelVersion": "1.3.0",
+  "bundleVersion": "1.3.0",
+  "updatedAt": "2026-09-07",
   "skills": [
     {
       "name": "project-bootstrap",
@@ -19,6 +19,14 @@
       "category": "workflow",
       "status": "draft",
       "description": "为后端需求生成 docs/features/<slug> 规格工件。",
+      "dependsOn": []
+    },
+    {
+      "name": "change-route",
+      "version": "0.1.0",
+      "category": "workflow",
+      "status": "draft",
+      "description": "按风险为需求或 BUG 选择 L0-L3 最小充分流程。",
       "dependsOn": []
     },
     {
@@ -66,7 +74,7 @@
       "version": "0.1.0",
       "category": "quality",
       "status": "draft",
-      "description": "执行后端 L1 验收：字段链路、编译、测试和文档检查。",
+      "description": "按变更级别执行后端最小充分验收；L2/L3 补充字段链路、编译、测试和文档检查。",
       "dependsOn": [
         "domain-feature-dev"
       ]
