@@ -33,6 +33,7 @@ Xueguo 是跨项目复用的 Agent 研发协作框架。框架仓只维护通用
 | 团队上下文 | 汇总任务、风险、待决策和冻结发布 | 项目空间 `status/` |
 | 会话预算 | 达到 token 阈值后以结构化检查点轮转会话 | 项目配置 + `status/sessions/` |
 | 变更风险路由 | 按风险选择 L0-L3 最小充分流程，避免小修复流程官僚化 | `change-risk-routing.md` + `change-route` Skill |
+| Spec 锚定 | 以 AC/SM 编号连接 Spec、任务、验证和测试，检查 Constitution 与 Spec 漂移 | `feature-analyze` + `feature-check.ps1` |
 
 ## 权威边界
 

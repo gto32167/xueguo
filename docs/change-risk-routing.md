@@ -15,7 +15,7 @@
 
 ## 分级问题
 
-`change_level` 是流程风险级别；BUG 卡中的 `verification_levels` 是验证深度，两者是独立维度。一个 L0 修复可以只做最小检查，一个 L2 变更也可能只需要 V1/V2 验证，不能把两种级别混用。
+`change_level` 是流程风险级别；BUG 卡中的 `verification_levels` 是验证深度，两者是独立维度。一个 L0 修复可以只做最小检查，一个 L2 变更也可能只需要验证层级 L1/L2，不能把两种级别混用。
 
 依次回答以下问题：
 
@@ -46,6 +46,7 @@
 
 - 继续使用完整黄金路径和现有人工责任门禁。
 - Acceptance Criteria 必须有唯一编号，并在任务和验证报告中通过 `spec_refs` 引用。
+- L2/L3 在实现前必须通过 `feature-analyze`；实现后必须逐条回填 AC/SM 验证证据，并检查 Constitution。
 - Plan 暴露出未声明的边界、接口、数据或依赖时，先回写 Spec，再继续实施。
 
 ## 升级条件

@@ -6,6 +6,7 @@ $required = @(
     "docs\framework-architecture.md",
     "docs\context-management.md",
     "docs\change-risk-routing.md",
+    "docs\dogfooding.md",
     "docs\versioning-and-upgrades.md",
     "templates\requirements\current.yaml",
     "templates\requirements\change-request.md",
@@ -22,6 +23,11 @@ $required = @(
     "java-spring\.cursor\rules\context-budget.mdc",
     "java-spring\.cursor\rules\change-risk-routing.mdc",
     "java-spring\.cursor\skills\change-route\SKILL.md",
+    "java-spring\.cursor\skills\feature-analyze\SKILL.md",
+    "java-spring\.cursor\skills\scripts\feature-check.ps1",
+    "java-spring\docs\features\_template\spec.md",
+    "java-spring\docs\features\_template\tasks.md",
+    "java-spring\docs\features\_template\verify.md",
     "tools\install.ps1",
     "tools\upgrade.ps1"
 )

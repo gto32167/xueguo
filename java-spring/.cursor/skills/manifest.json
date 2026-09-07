@@ -30,6 +30,16 @@
       "dependsOn": []
     },
     {
+      "name": "feature-analyze",
+      "version": "0.1.0",
+      "category": "quality",
+      "status": "draft",
+      "description": "在实现前检查 Spec、任务、验证和 Constitution 的一致性。",
+      "dependsOn": [
+        "backend-feature-spec"
+      ]
+    },
+    {
       "name": "impact-analyze",
       "version": "0.1.0",
       "category": "workflow",

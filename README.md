@@ -18,6 +18,8 @@
 
 变更先按 L0-L3 分级：小范围修复使用轻量记录和最小验证，跨模块、契约、数据或高风险变化才进入完整 Spec 流程；实施中发现影响扩大时必须升级级别。
 
+L2/L3 功能使用 `AC-xxx` 验收标准和 `SM-xxx` 成功指标连接 Spec、任务、验证和测试；实现前运行 `feature-analyze`，升级流程按 `docs/dogfooding.md` 进行自举验证。
+
 会话上下文达到 `.agent-workflow/config.yaml` 的 `context_management.rollover_threshold_tokens` 后，Agent 必须先生成结构化检查点，再由宿主创建新会话继续同一任务。默认阈值为 `260000` token；详见 `docs/context-management.md`。
 
 ## 平台目录

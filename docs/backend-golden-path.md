@@ -10,7 +10,7 @@
 bootstrap -> spec -> analyze -> contract -> implement -> verify -> finish
 ```
 
-该路径适用于 L2/L3 契约变更。L0/L1 局部修复使用 `docs/change-risk-routing.md` 的轻量路径；一旦发现共享字段、消费者或接口影响，立即升级到本路径。
+该路径适用于 L2/L3 契约变更，进入实现前先运行 `feature-analyze` 检查 Spec、任务、验证和 Constitution 映射。L0/L1 局部修复使用 `docs/change-risk-routing.md` 的轻量路径；一旦发现共享字段、消费者或接口影响，立即升级到本路径。
 
 ## 必查链路
 
