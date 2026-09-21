@@ -13,7 +13,7 @@
 ```yaml
 framework:
   name: xueguo
-  version: 1.3.0
+  version: 1.4.0
 project:
   id: example-project
   name: 示例项目
@@ -35,6 +35,7 @@ context_management:
 |---|---|---|
 | `.cursor/rules/` | 框架 | 可以覆盖同名框架文件 |
 | `.cursor/skills/` | 框架 | 可以覆盖同名框架文件 |
+| `.agent-workflow/xueguo.ps1` | 框架 | 可以更新工作流编排器 |
 | `.agent-workflow/config.yaml` | 项目 | 永不覆盖，冲突时提示 |
 | `docs/features/` | 项目 | 永不删除或覆盖进行中任务 |
 | 项目空间 `projects/<id>/` | 项目 | 升级工具不触碰 |

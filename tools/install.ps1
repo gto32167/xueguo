@@ -71,6 +71,7 @@ $sessionTemplateTarget = Join-Path $projectDir "status\sessions\_template.yaml"
 if (-not (Test-Path -LiteralPath $sessionTemplateTarget)) {
     Copy-Item -LiteralPath (Join-Path $frameworkRoot "templates\status\session-checkpoint.yaml") -Destination $sessionTemplateTarget
 }
-Set-Content -LiteralPath (Join-Path $agentDir "managed-files.txt") -Value @(".cursor/rules", ".cursor/skills") -Encoding UTF8
+Copy-Item -LiteralPath (Join-Path $frameworkRoot "tools\xueguo.ps1") -Destination (Join-Path $agentDir "xueguo.ps1") -Force
+Set-Content -LiteralPath (Join-Path $agentDir "managed-files.txt") -Value @(".cursor/rules", ".cursor/skills", ".agent-workflow/xueguo.ps1") -Encoding UTF8
 Write-Output "Framework installed: $targetRoot"
 Write-Output "Project space prepared: $projectDir"

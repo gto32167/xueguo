@@ -29,7 +29,9 @@ $required = @(
     "java-spring\docs\features\_template\tasks.md",
     "java-spring\docs\features\_template\verify.md",
     "tools\install.ps1",
-    "tools\upgrade.ps1"
+    "tools\upgrade.ps1",
+    "tools\xueguo.ps1",
+    "docs\workflow-runner.md"
 )
 $errors = @()
 foreach ($relative in $required) {
@@ -43,8 +45,8 @@ foreach ($file in $textFiles) {
     if ($content.Contains([char]0xfffd)) { $errors += "Found replacement character: $($file.FullName)" }
 }
 $version = (Get-Content -LiteralPath (Join-Path $root 'VERSION') -Raw -Encoding UTF8).Trim()
-if ($version -ne '1.3.0') { $errors += "VERSION must be 1.3.0, actual: $version" }
+if ($version -ne '1.4.0') { $errors += "VERSION must be 1.4.0, actual: $version" }
 $installContent = Get-Content -LiteralPath (Join-Path $root 'tools\install.ps1') -Raw -Encoding UTF8
 if ($installContent -notmatch '(?m)^\s*rollover_threshold_tokens:\s*260000\s*$') { $errors += "Default rollover threshold must be 260000 tokens." }
 if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Error $_ }; exit 1 }
-Write-Output "PASS: Xueguo Framework 1.3.0"
+Write-Output "PASS: Xueguo Framework 1.4.0"

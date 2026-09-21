@@ -9,6 +9,8 @@ $frameworkRoot = Split-Path -Parent $PSScriptRoot
 $sourceRoot = Join-Path $frameworkRoot "java-spring"
 $targetRoot = [System.IO.Path]::GetFullPath($Target)
 $configPath = Join-Path $targetRoot ".agent-workflow\config.yaml"
+$runnerSource = Join-Path $frameworkRoot "tools\xueguo.ps1"
+$runnerTarget = Join-Path $targetRoot ".agent-workflow\xueguo.ps1"
 if (-not (Test-Path -LiteralPath $targetRoot -PathType Container)) { throw "Target project directory does not exist: $targetRoot" }
 if (-not (Test-Path -LiteralPath $configPath)) { throw "Missing .agent-workflow/config.yaml. Run install.ps1 first." }
 
@@ -42,6 +44,8 @@ Write-Output "New files: $($adds.Count)"
 Write-Output "Changed files: $($updates.Count)"
 $adds | ForEach-Object { Write-Output "ADD $_" }
 $updates | ForEach-Object { Write-Output "UPDATE $_" }
+if (-not (Test-Path -LiteralPath $runnerTarget)) { Write-Output "ADD .agent-workflow\xueguo.ps1" }
+elseif ((Get-FileHash -LiteralPath $runnerSource -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath $runnerTarget -Algorithm SHA256).Hash) { Write-Output "UPDATE .agent-workflow\xueguo.ps1" }
 if ($missingRolloverThreshold) {
     Write-Warning "Project config has no rollover_threshold_tokens setting. Add context_management.rollover_threshold_tokens: 260000 manually; config.yaml is project-owned and will not be overwritten."
 }
@@ -53,4 +57,6 @@ foreach ($category in @(".cursor\rules", ".cursor\skills")) {
     if (-not (Test-Path -LiteralPath $targetDir)) { New-Item -ItemType Directory -Force -Path $targetDir | Out-Null }
     Copy-Item -Path (Join-Path $sourceDir "*") -Destination $targetDir -Recurse -Force
 }
+Copy-Item -LiteralPath $runnerSource -Destination $runnerTarget -Force
+Set-Content -LiteralPath (Join-Path $targetRoot ".agent-workflow\managed-files.txt") -Value @(".cursor/rules", ".cursor/skills", ".agent-workflow/xueguo.ps1") -Encoding UTF8
 Write-Output "Framework files upgraded. Project config and project space were preserved."
