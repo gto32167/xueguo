@@ -179,5 +179,5 @@ powershell -ExecutionPolicy Bypass -File tools\validate.ps1
 验证通过后应输出：
 
 ```text
-PASS: Xueguo Framework 1.4.0
+PASS: Xueguo Framework 1.5.0
 ```
