@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 - 2026-10-16
+
+- BUG 修复阶段引入接口探针：token 可用时优先用真实接口复现 BUG、核对字段和验证修复，不再只做静态源码和日志分析。
+- 新增 `bug-probe` Skill 和 `api-probe.ps1` 探针脚本：确定性执行探针请求、必填字段检查（支持点路径和数组下标）、token 脱敏和证据输出。
+- 新增 [接口探针](docs/api-probe.md) 规范：token 获取途径、凭据不落盘、只读优先、非只读探针人工门禁和证据标记 `API_REPRODUCED`/`API_VERIFIED`。
+- BUG 验证计划模板增加 `api_probe` 段；环境模板增加 `api_base_url`、`token_source` 和 `probe_policy` 字段；新增探针定义模板 `templates/bugs/api-probe.json`。
+- 字段链路核对规范增加接口探针核对项：前端消费的必填字段返回 `null` 或缺失时，以接口真实响应为准。
+
 ## 1.4.0 - 2026-09-18
 
 - 增加 `tools/xueguo.ps1` 工作流编排器，提供任务创建、风险路由、状态查询、门禁检查、验证和收尾命令。

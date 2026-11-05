@@ -20,6 +20,15 @@ reproduction:
   steps: []
   expected: {{期望}}
   actual: {{实际}}
+api_probe:
+  enabled: false
+  base_url: {{测试环境基础地址，不含凭据}}
+  token_source: {{登录接口换取 | 项目空间凭据引用 | 会话内提供 | 不可用}}
+  probe_files: []
+  required_field_checks: []
+  reproduced: null
+  verified_after_fix: null
+  note: 探针证据必须脱敏，token 不落盘；不可用时在 unverified_risks 说明原因。
 regression_test:
   path: {{测试路径}}
   status: MISSING

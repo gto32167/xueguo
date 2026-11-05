@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "platform": "java-spring",
-  "kernelVersion": "1.4.0",
-  "bundleVersion": "1.4.0",
-  "updatedAt": "2026-09-18",
+  "kernelVersion": "1.5.0",
+  "bundleVersion": "1.5.0",
+  "updatedAt": "2026-10-16",
   "skills": [
     {
       "name": "project-bootstrap",
@@ -88,6 +88,14 @@
       "dependsOn": [
         "domain-feature-dev"
       ]
+    },
+    {
+      "name": "bug-probe",
+      "version": "0.1.0",
+      "category": "quality",
+      "status": "draft",
+      "description": "BUG 修复阶段用真实接口复现和验证：获取 token 执行接口探针、比对前端必填字段、修复后重放回归。",
+      "dependsOn": []
     },
     {
       "name": "feature-finish",

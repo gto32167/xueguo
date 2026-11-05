@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "bug_id": "TAPD-{{ID}}",
+  "name": "{{探针名称，例如：复现订单详情必填字段为null}}",
+  "request": {
+    "method": "GET",
+    "path": "/api/{{模块}}/{{资源}}",
+    "query": {},
+    "headers": {},
+    "body": null
+  },
+  "auth": {
+    "type": "bearer",
+    "token_env": "XUEGUO_API_TOKEN"
+  },
+  "required_fields": ["data.{{前端消费的必填字段}}"],
+  "response_max_chars": 4000,
+  "notes": "本文件不保存真实 token、密码或完整连接串；认证头由 api-probe.ps1 执行时注入。非只读请求必须先通过人工门禁。"
+}

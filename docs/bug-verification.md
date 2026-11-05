@@ -3,8 +3,10 @@
 ## 标准流程
 
 ```text
-TAPD BUG -> 复现 -> 根因 -> 回归测试 -> 修复 -> L1/L2 -> VPN -> L3/L4/L5 -> 证据
+TAPD BUG -> 接口复现 -> 根因 -> 回归测试 -> 修复 -> 接口回归 -> L1/L2 -> VPN -> L3/L4/L5 -> 证据
 ```
+
+token 可用时，复现和回归优先用接口探针完成，静态源码和日志分析负责提出和解释假设；两者冲突时以接口真实返回为准。探针规则见 [接口探针](api-probe.md)。
 
 ## 按风险选择流程
 
@@ -22,13 +24,13 @@ BUG 先标记 `change_level`。L0 只需记录范围、原因和最小检查；L
 | L4 | 已部署环境 API 探针 | 人工 VPN |
 | L5 | 浏览器端到端验收 | 人工 VPN |
 
-每个 BUG 只选择能证明修复有效的最小验证组合。验证报告必须区分 `MOCK_VERIFIED`、`CONTRACT_VERIFIED`、`SANDBOX_VERIFIED` 和 `RELEASE_VERIFIED`，不能把 Mock 通过写成真实联调通过。
+每个 BUG 只选择能证明修复有效的最小验证组合。token 和测试环境可用时，L3 以上必须执行接口探针；L4 本身就是探针验证。验证报告必须区分 `MOCK_VERIFIED`、`CONTRACT_VERIFIED`、`SANDBOX_VERIFIED`、`RELEASE_VERIFIED`、`API_REPRODUCED` 和 `API_VERIFIED`，不能把 Mock 通过写成真实联调通过，也不能把静态推断写成接口结论。
 
 ## 证据要求
 
-- 修复前复现步骤。
-- 根因和影响范围。
+- 修复前复现步骤；token 可用时附探针请求定义和脱敏响应（`API_REPRODUCED`）。
+- 根因和影响范围；前端必填字段与接口真实响应的比对结论。
 - 回归测试类与执行命令。
-- API 响应摘要或页面截图索引。
-- 未执行验证和原因。
+- 修复后的探针重放结果（`API_VERIFIED`）、API 响应摘要或页面截图索引。
+- 未执行验证和原因；无 token、无环境或非只读操作未获批时，写明"未做接口验证"。
 - 仍需部署、VPN 或第三方资料确认的风险。

@@ -10,9 +10,14 @@ Xueguo 是一套面向 Java 8、Spring 和 Maven 多模块项目的 Agent 研发
 
 | 平台 | `kernelVersion` | `bundleVersion` | 发布日期 | 变更明细 |
 |---|---:|---:|---|---|
-| Java Spring | **1.4.0** | **1.4.0** | 2026-09-18 | [CHANGELOG.md](CHANGELOG.md) |
+| Java Spring | **1.5.0** | **1.5.0** | 2026-10-16 | [CHANGELOG.md](CHANGELOG.md) |
 
-1.4 在风险分级、项目记忆、执行路由、复盘沉淀、团队共同上下文和会话预算基础上，增加了可执行的任务状态机和工作流编排器：
+1.5 在 1.4 的任务状态机和工作流编排器基础上，把 BUG 修复从"静态分析"升级为"接口探针优先"：
+
+- BUG 修复阶段拿到测试环境 token 后，先用真实接口复现 BUG、核对前端必填字段，修复后重放同一探针回归；源码推断与接口返回冲突时以接口为准。
+- 探针 token 只在会话内存和脚本环境变量中流转，证据自动脱敏；只读探针优先，非只读探针必须通过人工门禁。
+
+完整研发流程保持不变：
 
 ```text
 需求发现 -> 执行路由 -> 需求基线 -> 变更控制 -> 状态机门禁
@@ -34,6 +39,7 @@ Xueguo 是一套面向 Java 8、Spring 和 Maven 多模块项目的 Agent 研发
 | [风险分级](docs/change-risk-routing.md) | L0-L3 变更级别与最小充分流程 |
 | [需求与变更](docs/requirements-and-changes.md) | 需求发现、基线和变更控制 |
 | [BUG 验证](docs/bug-verification.md) | BUG 复现、验证分层和证据要求 |
+| [接口探针](docs/api-probe.md) | BUG 修复的接口复现、token 管理和探针证据 |
 | [工作流编排器](docs/workflow-runner.md) | 任务创建、状态推进、门禁、验证和收尾命令 |
 | [并行开发与发布](docs/parallel-development-and-release.md) | 冲突登记、任务隔离和选择性发布 |
 | [会话上下文](docs/context-management.md) | Token 预算、检查点和会话轮转 |
@@ -154,7 +160,7 @@ Agent 也可以使用以下入口话术：
 ```text
 【需求发现】整理客户问题和目标，不急着写代码
 【需求基线】确认当前有效版本
-【BUG验证】读取 BUG 并制定验证层级 L1-L5 计划
+【BUG验证】读取 BUG，token 可用时先用接口探针复现，再制定验证层级 L1-L5 计划
 【并行协调】登记冲突范围和发布边界
 【verify】执行当前任务的最小可信验证
 【learn】复盘任务并沉淀可验证记忆
