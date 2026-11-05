@@ -181,3 +181,7 @@ powershell -ExecutionPolicy Bypass -File tools\validate.ps1
 ```text
 PASS: Xueguo Framework 1.5.0
 ```
+
+## 开源协议
+
+本项目基于 [MIT License](LICENSE) 开源，可自由使用、修改和分发；请保留版权声明。

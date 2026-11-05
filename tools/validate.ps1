@@ -2,6 +2,7 @@ $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $required = @(
     "VERSION",
+    "LICENSE",
     "README.md",
     "docs\framework-architecture.md",
     "docs\context-management.md",
