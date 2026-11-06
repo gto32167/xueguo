@@ -4,6 +4,7 @@ status: EFFECTIVE
 requirement_id: {{requirement_id}}
 version: {{v1}}
 source: {{来源}}
+prd_ref: {{PRD 链接或归档路径，无 PRD 时写 N/A}}
 
 ## 范围
 

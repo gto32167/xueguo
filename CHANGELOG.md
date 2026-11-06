@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.0 - 2026-11-06
+
+- 新增 PRD 拆解链路：`discovery.md`、`baseline-spec.md` 和 Feature `proposal.md` 增加 `prd_ref` 字段登记 PRD 来源；`backend-feature-spec` 升级为 0.3.0，要求先读 PRD 原文、逐条对照拆解，本期不做的条目显式写入 Non-Goals。
+- 新增【PRD拆解】入口话术，`backend-feature-spec` 触发词补充 PRD 拆解、需求拆解。
+- BUG 修复接入规格对照：`change-route` 升级为 0.2.0，修复类任务先检索 `docs/features/` 规格并以 `AC-xxx` 作为预期行为基准；`bug-probe` 升级为 0.2.0，规格、源码与接口返回三方冲突时先判定规格过时再修复。
+- BUG 验证计划模板增加 `spec_alignment` 字段，记录修复与规格一致、规格已更新后修复或无相关规格。
+- BUG 验证文档增加"规格对照"章节，无相关规格时以接口探针和回归测试作为预期行为依据。
+
 ## 1.5.0 - 2026-10-16
 
 - BUG 修复阶段引入接口探针：token 可用时优先用真实接口复现 BUG、核对字段和验证修复，不再只做静态源码和日志分析。

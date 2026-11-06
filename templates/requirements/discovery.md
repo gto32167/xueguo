@@ -4,6 +4,7 @@ status: DRAFT
 decision: {{ACCEPT | SPLIT | MANDATED | ACCEPTED_WITH_RISK | HOLD | REJECTED_BY_OWNER}}
 owner: {{负责人}}
 source: {{TAPD/会议/客户/其他}}
+prd_ref: {{PRD 链接或归档路径，无 PRD 时写 N/A}}
 
 ## 问题
 

@@ -13,7 +13,7 @@
 ```yaml
 framework:
   name: xueguo
-  version: 1.5.0
+  version: 1.6.0
 project:
   id: example-project
   name: 示例项目

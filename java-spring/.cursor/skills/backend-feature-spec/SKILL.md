@@ -1,21 +1,23 @@
 ---
 name: backend-feature-spec
-version: 0.2.0
-description: 为后端需求创建 docs/features/<slug> 规格工件。用户说 spec、propose、先写规格时触发。
+version: 0.3.0
+description: 为后端需求创建 docs/features/<slug> 规格工件。用户说 PRD 拆解、需求拆解、spec、propose、先写规格时触发。
 ---
 
 # Backend Feature Spec
 
 ## 流程
 
-1. 根据用户需求生成小写短横线 `<slug>`。
-2. 复制 `docs/features/_template/` 到 `docs/features/<slug>/`。
-3. 更新 `proposal.md`、`spec.md`、`status.yaml`。
-4. 在 `spec.md` 中填写 Problem Statement、Success Metrics、User Stories、Acceptance Criteria、Non-Goals 和 Constraints。
-5. 为每条成功指标使用 `SM-xxx` 编号，为每条验收标准使用唯一的 `AC-xxx` 编号，并写明验证证据。
-6. 明确需求是否影响外部接口契约。
-7. 按目标清晰度、路径清晰度和风险，将任务建议路由为 `SYSTEM`、`AI` 或 `HUMAN`。
-8. 涉及业务语义、资金、权限、状态、删除或不可逆契约时，登记人工门禁和决策人。执行主体不替代最终人工责任人。
+1. 有 PRD 时先完整读取 PRD 原文，把 PRD 链接或归档路径登记为 `prd_ref`；无 PRD 时以 `discovery.md` 或需求基线为输入，`prd_ref` 写 N/A。
+2. 根据用户需求生成小写短横线 `<slug>`。
+3. 复制 `docs/features/_template/` 到 `docs/features/<slug>/`。
+4. 更新 `proposal.md`、`spec.md`、`status.yaml`，`proposal.md` 背景写明 `prd_ref`。
+5. 在 `spec.md` 中填写 Problem Statement、Success Metrics、User Stories、Acceptance Criteria、Non-Goals 和 Constraints。
+6. 逐条对照 PRD 拆解：每条 PRD 条目要么映射到功能需求或验收场景，要么显式写入 Non-Goals；不允许静默丢弃或自行扩张范围。
+7. 为每条成功指标使用 `SM-xxx` 编号，为每条验收标准使用唯一的 `AC-xxx` 编号，并写明验证证据。
+8. 明确需求是否影响外部接口契约。
+9. 按目标清晰度、路径清晰度和风险，将任务建议路由为 `SYSTEM`、`AI` 或 `HUMAN`。
+10. 涉及业务语义、资金、权限、状态、删除或不可逆契约时，登记人工门禁和决策人。执行主体不替代最终人工责任人。
 
 ## Spec 迭代门禁
 
@@ -27,4 +29,4 @@ description: 为后端需求创建 docs/features/<slug> 规格工件。用户说
 
 ## 交付要求
 
-回复 feature 目录、需求范围、待分析仓库和下一步 `【analyze】<slug>`。
+回复 feature 目录、需求范围、PRD 对照结论（已映射与进入 Non-Goals 的条目数）、待分析仓库和下一步 `【analyze】<slug>`。

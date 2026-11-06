@@ -10,7 +10,12 @@ Xueguo 是一套面向 Java 8、Spring 和 Maven 多模块项目的 Agent 研发
 
 | 平台 | `kernelVersion` | `bundleVersion` | 发布日期 | 变更明细 |
 |---|---:|---:|---|---|
-| Java Spring | **1.5.0** | **1.5.0** | 2026-10-16 | [CHANGELOG.md](CHANGELOG.md) |
+| Java Spring | **1.6.0** | **1.6.0** | 2026-11-06 | [CHANGELOG.md](CHANGELOG.md) |
+
+1.6 把需求和 BUG 两侧接入规格链路：
+
+- 新增 PRD 拆解入口：PRD 原文登记为 `prd_ref`，拆解结果逐条对照 PRD，本期不做的条目显式进入 Non-Goals，不允许静默丢弃。
+- BUG 修复前强制检索本地规格文档，以 `AC-xxx` 作为预期行为基准；修复与规格冲突时先判定规格过时并更新 Spec，再修复。
 
 1.5 在 1.4 的任务状态机和工作流编排器基础上，把 BUG 修复从"静态分析"升级为"接口探针优先"：
 
@@ -158,9 +163,10 @@ powershell -ExecutionPolicy Bypass -File .agent-workflow\xueguo.ps1 `
 Agent 也可以使用以下入口话术：
 
 ```text
+【PRD拆解】读取 PRD 原文并拆解为 Feature Spec 规格工件，登记 PRD 来源
 【需求发现】整理客户问题和目标，不急着写代码
 【需求基线】确认当前有效版本
-【BUG验证】读取 BUG，token 可用时先用接口探针复现，再制定验证层级 L1-L5 计划
+【BUG验证】读取 BUG 与本地规格文档，token 可用时先用接口探针复现，再制定验证层级 L1-L5 计划
 【并行协调】登记冲突范围和发布边界
 【verify】执行当前任务的最小可信验证
 【learn】复盘任务并沉淀可验证记忆
@@ -179,7 +185,7 @@ powershell -ExecutionPolicy Bypass -File tools\validate.ps1
 验证通过后应输出：
 
 ```text
-PASS: Xueguo Framework 1.5.0
+PASS: Xueguo Framework 1.6.0
 ```
 
 ## 开源协议

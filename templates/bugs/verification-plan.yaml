@@ -15,6 +15,7 @@ execution:
 root_cause_layer: {{待分析}}
 scope_summary: {{受影响仓库、模块和文件}}
 spec_refs: []
+spec_alignment: {{修复与规格一致 | 规格已更新后修复 | 无相关规格}}
 affected_repositories: []
 reproduction:
   steps: []
